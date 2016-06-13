@@ -15,7 +15,7 @@ To use `vue-validator`, you need to `install` it to `Vue`.
 ```javascript
 import Vue from 'vue';
 import VueValidator from 'vue-validator';
-Vue.install(VueValidator);
+Vue.use(VueValidator);
 ```
 
 Then you can use `v-validator` directive on `form` element:
