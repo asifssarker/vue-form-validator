@@ -10,7 +10,7 @@
          * 必填(选)验证
          */
         required: function(value, input) {
-            value = value || '';
+            value = value.toString() || '';
             var valid = !!value.length,
                 isCheckable = input.tagName === 'SELECT' ||
                               ['radio', 'checkbox'].indexOf(input.type) > -1;
