@@ -258,7 +258,7 @@
     //
     //==================================================================
 
-    VueValidator.install = function() {
+    VueValidator.install = function(Vue) {
 
         Vue.directive('validator', {
 

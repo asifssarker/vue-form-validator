@@ -44,7 +44,7 @@ VueValidator.addRule = function(ruleName, func) {
 //
 //==================================================================
 
-VueValidator.install = function() {
+VueValidator.install = function(Vue) {
 
     Vue.directive('validator', {
 
