@@ -147,7 +147,13 @@ function initItem(item, vm, NS) {
     vm.$compile(item.input);
     */
     vm.$watch(NS + '.' + item.model + '.valid', function(valid) {
-        item.input.classList[valid === true ? 'remove': 'add']('error');
+        //item.input.classList[valid === true ? 'remove': 'add']('error');
+        var cls = item.input.className;
+        if (valid === true) {
+            item.input.className = cls.replace('error', '');
+        } else {
+            item.input.className = cls + 'error';
+        }
     });
 }
 
