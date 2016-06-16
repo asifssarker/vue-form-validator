@@ -16,7 +16,7 @@ function checkAll(vm, items, NS) {
         valid = true,   //默认返回
         //逐个检查
         results = items.map(function(item) {
-            return checkItem(vm, item, vm[item.model], NS);
+            return checkItem(vm, item, vm.$get(item.model), NS);
         });
 
     for (var i = 0; i < results.length; i++) {
@@ -53,8 +53,8 @@ function checkItem(vm, item, value, NS) {
         },
         //将验证的结果同步到 viewmodel 中
         markResult = function (result) {
-            vm[NS][item.model].valid = result.valid;
-            vm[NS][item.model].msg = result.msg;
+            vm.$set(NS + '.' + item.model + '.valid', result.valid);
+            vm.$set(NS + '.' + item.model + '.msg', result.msg);
         };
 
     //对于不可见表单项，默认不做检查
