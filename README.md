@@ -67,3 +67,30 @@ The `minlength="x"` rule means the form control must be filled with at least `x`
 <input type="text" v-model="name" minlength="3">
 ```
 
+### Add validation rule
+
+Adding custom validation rules are simple! Just call `VueValidator.addRule` function and provide rule name and validate function.
+
+```javascript
+// the validate function has three arguments:
+// value: the value user filled
+// input: the form control element
+// param: the attribute value of using this rule
+VueValidator.addRule('myrule', function(value, input, param) {
+    
+});
+```
+
+### Async validation
+
+
+
+## Todo
+
+- [ ] Date format validation
+- [ ] 
+
+## Contribution
+
+Pull requests are welcome.
+
