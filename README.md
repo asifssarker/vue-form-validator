@@ -77,7 +77,10 @@ Adding custom validation rules are simple! Just call `VueValidator.addRule` func
 // input: the form control element
 // param: the attribute value of using this rule
 VueValidator.addRule('myrule', function(value, input, param) {
-    
+    return {
+        valid: false,
+        msg: 'some error message'
+    };
 });
 ```
 
@@ -88,7 +91,8 @@ VueValidator.addRule('myrule', function(value, input, param) {
 ## Todo
 
 - [ ] Date format validation
-- [ ] 
+- [ ] Documentation
+- [] Unit testing
 
 ## Contribution
 
