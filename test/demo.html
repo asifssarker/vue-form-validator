@@ -34,7 +34,7 @@
             <dl class="item">
                 <dt class="label">邮箱：</dt>
                 <dd class="control">
-                    <input type="text" v-model="email" data-type="email" required>
+                    <input type="text" v-model="email" data-type="email">
                 </dd>
             </dl>
             <dl class="item">
@@ -75,7 +75,7 @@
             <dl class="item" v-show="type==2">
                 <dt class="label">公司简介</dt>
                 <dd class="control">
-                    <textarea v-model="desc" required maxlength="300" minlength="5"></textarea>
+                    <textarea v-model="desc" maxlength="300" minlength="5"></textarea>
                 </dd>
             </dl>
             <dl class="item">

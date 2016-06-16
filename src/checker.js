@@ -2,7 +2,8 @@
  * 按照规则对指定表单项及填写值进行检查
  */
 
-import ruleSet from './ruleset.js';
+import ruleSet from './ruleset';
+import {toString} from './util'
 
 export {checkAll, checkItem, checkRule};
 
@@ -63,6 +64,10 @@ function checkItem(vm, item, value, NS) {
 
     //检查每项规则
     for (ruleName in item.rules) {
+        if (!toString(value) && ruleName !== 'required') {
+            ruleResult = result; // 对于非required验证，跳过空值
+            continue;
+        }
         ruleResult = checkRule(ruleName, value, input, item.rules[ruleName]);
         if (ruleResult instanceof Promise) {    //异步检查规则返回 Promise
             promise = ruleResult;
