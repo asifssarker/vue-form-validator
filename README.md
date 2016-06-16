@@ -72,10 +72,12 @@ The `minlength="x"` rule means the form control must be filled with at least `x`
 Adding custom validation rules are simple! Just call `VueValidator.addRule` function and provide rule name and validate function.
 
 ```javascript
-// the validate function has three arguments:
-// value: the value user filled
-// input: the form control element
-// param: the attribute value of using this rule
+/*
+ * the validate function has three arguments:
+ * value: the value user filled
+ * input: the form control element
+ * param: the attribute value of using this rule
+ */
 VueValidator.addRule('myrule', function(value, input, param) {
     return {
         valid: false,
@@ -84,15 +86,47 @@ VueValidator.addRule('myrule', function(value, input, param) {
 });
 ```
 
+To use your customized rule, add the rule name as input's attribute:
+
+```html
+<input type="text" myrule="some param" v-model="xx">
+```
+
 ### Async validation
 
+To add an async validation rule, return a `Promise` in the validate function.
+
+```javascript
+VueValidator.addRule('myrule', function(value, input, param) {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve({
+                valid: false,
+                msg: 'some error message'
+            });
+        }, 1000);
+    });
+});
+```
+
+If you have any async rules in a form, the `$valid` will be a `Promise` instead of a boolean value. You must wait for that `Promise` to check the form's validality:
+
+```javascript
+this.registerForm.$valid.then(function(valid) {
+    if (valid) {
+        // post data to server
+    } else {
+        // do something else
+    }
+});
+```
 
 
 ## Todo
 
 - [ ] Date format validation
 - [ ] Documentation
-- [] Unit testing
+- [ ] Unit testing
 
 ## Contribution
 
