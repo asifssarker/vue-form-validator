@@ -150,9 +150,9 @@ function initItem(item, vm, NS) {
         //item.input.classList[valid === true ? 'remove': 'add']('error');
         var cls = item.input.className;
         if (valid === true) {
-            item.input.className = cls.replace('error', '');
+            item.input.className = cls.replace(/\berror\b/, '');
         } else {
-            item.input.className = cls + 'error';
+            item.input.className = cls + ' error';
         }
     });
 }
