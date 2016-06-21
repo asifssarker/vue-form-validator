@@ -3,14 +3,16 @@
   "version": "0.0.2",
   "description": "Form validator for Vue.js.",
   "main": "dist/vue-validator.js",
-  "files": ["dist/vue-validator.js"],
+  "files": [
+    "dist/vue-validator.js"
+  ],
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "karma",
     "build": "rollup -c",
-    "watch": "chokidar 'src/*.js' -c 'npm run build'"
+    "watch": "rollup -cw"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,7 @@
   },
   "homepage": "https://github.com/webzhao/vue-validator#readme",
   "devDependencies": {
-    "chokidar-cli": "^1.2.0",
-    "rollup": "^0.25.4"
+    "rollup": "^0.32.0",
+    "rollup-watch": "^2.4.0"
   }
 }
