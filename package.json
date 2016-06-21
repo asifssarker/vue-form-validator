@@ -1,6 +1,6 @@
 {
   "name": "vue-form-validator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Form validator for Vue.js.",
   "main": "dist/vue-validator.js",
   "files": [
