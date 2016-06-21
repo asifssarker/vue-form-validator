@@ -1,5 +1,5 @@
 {
-  "name": "vue-validator",
+  "name": "vue-form-validator",
   "version": "0.0.2",
   "description": "Form validator for Vue.js.",
   "main": "dist/vue-validator.js",
