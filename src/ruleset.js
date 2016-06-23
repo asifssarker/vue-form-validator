@@ -2,7 +2,7 @@ import {toString} from './util'
 
 export default ruleset;
 
-const ruleset = {
+var ruleset = {
 
     /**
      * 必填(选)验证
@@ -27,7 +27,7 @@ const ruleset = {
         var valid = value.length >= parseInt(param);
         return {
             valid: valid,
-            msg: (valid ? '' : `请最少填写${param}个字`)
+            msg: (valid ? '' : '请最少填写'+ param + '个字')
         };
     },
 
@@ -40,7 +40,7 @@ const ruleset = {
         var valid = value.length <= parseInt(param);
         return {
             valid: valid,
-            msg: (valid ? '' : `请最多填写${param}个字`)
+            msg: (valid ? '' : '请最多填写' + param + '个字')
         };
     },
     /**
@@ -86,15 +86,15 @@ const ruleset = {
      * 数字格式
      */
     numberType: function(value, input) {
-        let valid = false,
+        var valid = false,
             msg = '请输入数字';
         if (isNaN(value)) return { valid, msg };
         var min = parseFloat(input.getAttribute('min'));
         var max = parseFloat(input.getAttribute('max'));
         min = isNaN(min) ? -Infinity : min;
         max = isNaN(max) ? Infinity : max;
-        msg = value < min ? `输入值最小为${min}` :
-              value > max ? `输入值最大为${max}` : '';
+        msg = value < min ? '输入值最小为' + min :
+              value > max ? '输入值最大为' + max : '';
         return {
             valid: !msg,
             msg: msg
