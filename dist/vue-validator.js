@@ -139,7 +139,7 @@
             });
 
         for (var i = 0; i < results.length; i++) {
-            if (results[i] instanceof Promise) {
+            if (typeof results[i].then == 'function') {
                 promise = results[i];
                 continue;   //异步检查结果后面再说
             }
@@ -188,7 +188,7 @@
                 continue;
             }
             ruleResult = checkRule(ruleName, value, input, item.rules[ruleName]);
-            if (ruleResult instanceof Promise) {    //异步检查规则返回 Promise
+            if (typeof ruleResult.then  == 'function') {    //异步检查规则返回 Promise
                 promise = ruleResult;
                 continue;   //继续进行同步的检查，完成所有后再处理
             }
