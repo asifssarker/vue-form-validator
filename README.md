@@ -1,6 +1,4 @@
-# vue-validator
-
-> Note: this project is still under development. Please DO NOT use it in production environment.
+# vue-form-validator
 
 Deadly simple form validation for Vue.js. Features:
 
@@ -10,11 +8,11 @@ Deadly simple form validation for Vue.js. Features:
 
 ## Usage
 
-To use `vue-validator`, you need to `install` it to `Vue`.
+To use `vue-form-validator`, you need to `install` it to `Vue`.
 
 ```javascript
 import Vue from 'vue';
-import VueValidator from 'vue-validator';
+import VueValidator from 'vue-form-validator';
 Vue.use(VueValidator);
 ```
 
