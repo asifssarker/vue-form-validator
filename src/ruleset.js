@@ -88,7 +88,7 @@ var ruleset = {
     numberType: function(value, input) {
         var valid = false,
             msg = '请输入数字';
-        if (isNaN(value)) return { valid, msg };
+        if (isNaN(value)) return { valid: valid, msg: msg };
         var min = parseFloat(input.getAttribute('min'));
         var max = parseFloat(input.getAttribute('max'));
         min = isNaN(min) ? -Infinity : min;
